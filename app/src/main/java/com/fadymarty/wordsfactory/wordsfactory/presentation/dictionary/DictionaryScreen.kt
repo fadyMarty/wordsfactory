@@ -7,8 +7,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -21,11 +19,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.fadymarty.ui.theme.Rubik
 import com.fadymarty.wordsfactory.R
-import java.util.Dictionary
 
 @Composable
 fun DictionaryScreen(
-    isDictionaryEmpty: Boolean
+    isDictionaryEmpty: Boolean,
 ) {
     if (isDictionaryEmpty) {
         Column(
