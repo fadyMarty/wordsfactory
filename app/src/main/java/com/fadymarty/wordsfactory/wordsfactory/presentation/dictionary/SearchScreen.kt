@@ -14,7 +14,7 @@ import com.fadymarty.wordsfactory.presentation.common.WordsButton
 @Composable
 fun DictionaryScreen(
     viewModel: SearchViewModel,
-    wordState: WordState,
+    wordState: WordState
 ) {
     Column(
         modifier = Modifier.fillMaxSize()

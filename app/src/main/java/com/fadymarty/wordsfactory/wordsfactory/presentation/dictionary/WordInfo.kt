@@ -1,25 +1,35 @@
 package com.fadymarty.wordsfactory.presentation.dictionary
 
+import android.media.AudioAttributes
+import android.media.MediaPlayer
+import android.net.Uri
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.fadymarty.ui.theme.Rubik
+import com.fadymarty.wordsfactory.R
 import com.fadymarty.wordsfactory.domain.model.Word
 import com.fadymarty.wordsfactory.presentation.common.WordCard
+import okio.IOException
 
 @Composable
 fun WordInfo(
     word: Word,
 ) {
+    val context = LocalContext.current
     Row(
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -39,6 +49,36 @@ fun WordInfo(
                 fontSize = 14.sp,
                 color = MaterialTheme.colorScheme.primary
             )
+        }
+
+        Spacer(modifier = Modifier.width(16.dp))
+
+        word.phonetics.forEach { phonetic ->
+            if (phonetic.audio != "")
+                IconButton(
+                    onClick = {
+                        val mediaPlayer = MediaPlayer()
+                        mediaPlayer.setAudioAttributes(
+                            AudioAttributes.Builder()
+                                .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                                .build()
+                        )
+
+                        try {
+                            mediaPlayer.setDataSource(context, Uri.parse(phonetic.audio))
+                            mediaPlayer.prepare()
+                            mediaPlayer.start()
+                        } catch (e: IOException) {
+                            e.printStackTrace()
+                        }
+                    }
+                ) {
+                    Icon(
+                        painter = painterResource(R.drawable.ic_audio),
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.primary
+                    )
+                }
         }
     }
 
