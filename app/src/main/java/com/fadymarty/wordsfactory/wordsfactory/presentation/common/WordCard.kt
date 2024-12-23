@@ -20,12 +20,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.fadymarty.ui.theme.Rubik
 import com.fadymarty.wordsfactory.R
-import com.fadymarty.wordsfactory.domain.model.Definition
+import com.fadymarty.wordsfactory.domain.model.DefinitionDto
 
 @Composable
 fun WordCard(
     modifier: Modifier = Modifier,
-    definition: Definition
+    definition: DefinitionDto
 ) {
     OutlinedCard(
         modifier = modifier,

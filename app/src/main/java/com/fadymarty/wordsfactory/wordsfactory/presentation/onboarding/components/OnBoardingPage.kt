@@ -19,9 +19,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.fadymarty.wordsfactory.R
 import com.fadymarty.ui.theme.Rubik
 import com.fadymarty.ui.theme.WordsFactoryTheme
+import com.fadymarty.wordsfactory.R
 import com.fadymarty.wordsfactory.presentation.onboarding.Page
 import com.fadymarty.wordsfactory.presentation.onboarding.pages
 

@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.pager.HorizontalPager
@@ -21,8 +20,8 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.fadymarty.wordsfactory.R
 import com.fadymarty.ui.theme.Rubik
+import com.fadymarty.wordsfactory.R
 import com.fadymarty.wordsfactory.presentation.common.WordsButton
 import com.fadymarty.wordsfactory.presentation.onboarding.components.OnBoardingPage
 import com.fadymarty.wordsfactory.presentation.onboarding.components.PageIndicator

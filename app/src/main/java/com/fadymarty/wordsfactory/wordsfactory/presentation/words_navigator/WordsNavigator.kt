@@ -19,7 +19,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.fadymarty.wordsfactory.R
 import com.fadymarty.wordsfactory.presentation.dictionary.DictionaryScreen
-import com.fadymarty.wordsfactory.presentation.dictionary.SearchViewModel
+import com.fadymarty.wordsfactory.presentation.dictionary.DictionaryViewModel
 import com.fadymarty.wordsfactory.presentation.nvgraph.Route
 import com.fadymarty.wordsfactory.presentation.videos.VideosScreen
 import com.fadymarty.wordsfactory.presentation.words_navigator.components.BottomNavigationItem
@@ -93,7 +93,7 @@ fun WordsNavigator() {
             modifier = Modifier.padding(bottom = it.calculateBottomPadding())
         ) {
             composable(route = Route.DictionaryScreen.route) {
-                val viewModel: SearchViewModel = hiltViewModel()
+                val viewModel: DictionaryViewModel = hiltViewModel()
                 DictionaryScreen(viewModel, viewModel.wordState.value)
             }
 

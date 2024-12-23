@@ -21,13 +21,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.fadymarty.ui.theme.Rubik
 import com.fadymarty.wordsfactory.R
-import com.fadymarty.wordsfactory.domain.model.Word
+import com.fadymarty.wordsfactory.domain.model.WordDto
 import com.fadymarty.wordsfactory.presentation.common.WordCard
 import okio.IOException
 
 @Composable
 fun WordInfo(
-    word: Word,
+    word: WordDto,
 ) {
     val context = LocalContext.current
     Row(

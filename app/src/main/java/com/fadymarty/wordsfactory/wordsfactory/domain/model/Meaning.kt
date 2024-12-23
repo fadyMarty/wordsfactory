@@ -1,6 +1,6 @@
-package com.fadymarty.wordsfactory.domain.model
+package com.fadymarty.wordsfactory.wordsfactory.domain.model
 
-data class Meaning(
+class Meaning(
     val definitions: List<Definition>,
     val partOfSpeech: String
 )

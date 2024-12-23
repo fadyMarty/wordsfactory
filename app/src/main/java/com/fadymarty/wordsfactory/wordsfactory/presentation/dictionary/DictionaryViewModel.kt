@@ -5,7 +5,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.fadymarty.core.Result
-import com.fadymarty.wordsfactory.domain.usecases.GetWord
+import com.fadymarty.wordsfactory.wordsfactory.data.local.entity.WordEntity
+import com.fadymarty.wordsfactory.wordsfactory.domain.usecases.dictionary.DictionaryUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -13,8 +14,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class SearchViewModel @Inject constructor(
-    private val getWord: GetWord,
+class DictionaryViewModel @Inject constructor(
+    private val dictionaryUseCases: DictionaryUseCases
 ) : ViewModel() {
 
     private val _searchQuery = mutableStateOf<String>("")
@@ -31,7 +32,7 @@ class SearchViewModel @Inject constructor(
         _searchQuery.value = query
 
         viewModelScope.launch {
-            getWord(query)
+            dictionaryUseCases.getWord(query)
                 .onEach { result ->
                     when (result) {
                         is Result.Success -> {
@@ -50,5 +51,9 @@ class SearchViewModel @Inject constructor(
                     }
                 }.launchIn(this)
         }
+    }
+
+    suspend fun upsertWord(word: List<WordEntity>) {
+        dictionaryUseCases.upsertWord(word)
     }
 }

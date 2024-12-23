@@ -1,4 +1,4 @@
-package com.fadymarty.wordsfactory.domain.model
+package com.fadymarty.wordsfactory.wordsfactory.domain.model
 
 data class Phonetic(
     val audio: String,

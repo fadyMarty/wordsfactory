@@ -1,14 +1,14 @@
 package com.fadymarty.wordsfactory.presentation.videos
 
 import android.graphics.Bitmap
+import android.util.Log
+import android.webkit.WebView
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import com.google.accompanist.web.*
-import android.webkit.WebView
-import androidx.compose.runtime.remember
-import android.util.Log
 
 @Composable
 fun VideosScreen() {
